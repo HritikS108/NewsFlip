@@ -1,0 +1,54 @@
+{{!-- This page will show all the news in sorted order like latest to oldest...etc --}}
+
+<script>
+    $("#nav-feed").addClass("active");
+    $("#nav-sessions").removeClass("active");
+    $("#nav-profile").removeClass("active");
+</script>
+<div class="container">
+    {{#if news}}
+        <div class="row">
+            {{#each news}}
+                <div class="col-md-12">
+                    <div class="card" style="width: auto">
+                        <img class="card-img-top" src={{this.urlToImage}} alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.title}} - {{this.author}}</h5>
+                            <h6 class="card-text">{{this.description}}</h6>
+                            <p class="card-text">{{this.content}}</p>
+                            <div class="card-footer">
+                                <small class="text-muted">{{this.from}}</small>
+                                <!--                                <a href={{this.url}} class="btn-sm btn-primary float-right">See More</a>-->
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Recipient's username"
+                                           aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button"
+                                                onclick="share(`{{this.url}}`)">Share
+                                        </button>
+                                        {{#if this.isLiked}}
+                                            <button id=dislike-{{this.id}} class="btn btn-outline-secondary"
+                                                    type="button"
+                                                    onclick="dislike(`{{this.id}}`)">Dislike
+                                            </button>
+                                        {{else}}
+                                            <button id=like-{{this.id}} class="btn btn-outline-secondary" type="button"
+                                                    onclick="like(`{{this.id}}`)">Like
+                                            </button>
+                                        {{/if}}
+                                        <button class="btn btn-outline-secondary" type="button"><a href={{this.url}}>See
+                                            More</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div>
+            <h2>Sorry nothing to show. Try another search term or different sources</h2>
+        </div>
+    {{/if}}
+</div>

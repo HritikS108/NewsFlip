@@ -1,0 +1,40 @@
+{
+  "name": "thesyndicateherald",
+  "version": "1.0.0",
+  "description": "A News aggregator website.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compmonk/TheSyndicateHerald.git"
+  },
+  "author": "Zubair Shaikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/compmonk/TheSyndicateHerald/issues"
+  },
+  "homepage": "https://github.com/compmonk/TheSyndicateHerald#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "bootstrap": "^4.6.2",
+    "express": "^4.18.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.4",
+    "mongod": "^2.0.0",
+    "mongodb": "^3.7.3",
+    "newman": "^4.6.1",
+    "newsapi": "^2.4.1",
+    "popper.js": "^1.16.1",
+    "select2": "github:select2/select2",
+    "select2-bootstrap-theme": "^0.1.0-beta.10",
+    "uuid": "^3.4.0",
+    "uuid-mongodb": "^2.5.1"
+  }
+}

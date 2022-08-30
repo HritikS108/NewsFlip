@@ -1,0 +1,114 @@
+<main>
+    <div class="container">
+        <div class="col-md-12 title-logo">
+            <div class="align-content-center">
+                <img src="/public/img/logo.png" alt="The Syndicate Herald">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 form-container">
+
+ {{!-- ************************************************** signup form ************************************* --}}
+                <form id="signup-form" method="post" action="/signup">   
+                    <h3>Sign Up.</h3>
+
+                    <div class="form-group row">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" class="form-control" type="text" name="firstName"
+                               placeholder="First Name" onchange="signUp()" data-toggle="tooltip"
+                               data-placement="right" title="Please enter a First Name"/>
+                    </div>
+                    <div class="form-group hidden" id="first-name-error-container">
+                        <div class="has-error" id="first-name-error-text"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" class="form-control" type="text" name="lastName" placeholder="Last Name" onchange="signUp()"
+                               data-toggle="tooltip" data-placement="right" title="Please enter a Last Name"/>
+                    </div>
+                    <div class="form-group hidden" id="last-name-error-container">
+                        <div class="has-error" id="last-name-error-text"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email">Email</label>
+                        <input id="email" class="form-control" type="email" name="email" placeholder="Email" data-toggle="tooltip"
+                               data-placement="right" title="Please enter a valid Email" onchange="signUp()"/>
+                    </div>
+                    <div class="form-group hidden" id="email-error-container">
+                        <div class="has-error" id="email-error-text"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="username">Username</label>
+                        <input id="username" class="form-control" type="text" name="username" placeholder="Username"
+                               data-toggle="tooltip" data-placement="right" title="Please enter a unique Username"
+                               onchange="signUp()"/>
+                    </div>
+                    <div class="form-group hidden" id="username-error-container">
+                        <div class="has-error" id="username-error-text"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password">Password</label>
+                        <input id="password" class="form-control" type="password" name="password" placeholder="Password"
+                               data-toggle="tooltip" data-placement="right" onchange="signUp()"
+                               title="Password must be between 6 and 15 characters"/>
+                    </div>
+                    <div class="form-group hidden" id="password-error-container">
+                        <div class="has-error" id="password-error-text"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <button id="signup-button" class="btn btn-success" disabled type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4">
+            </div>
+
+            <div class="col-md-4 form-container">
+
+{{!-- ************************************************** login form ************************************* --}}
+                <form id="login-form" method="post" action="/login">
+                    <h3>Login.</h3>
+
+                    <div class="form-group row">
+                        <label for="login-username">Username</label>
+                        <input id="login-username" class="form-control" type="text" name="username"
+                               placeholder="Username"/>
+                    </div>
+
+                    <div class="form-group" id="login-username-error-container-2">
+                        <div class="has-error" id="login-username-error-text-2">{{errors.username}}</div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="login-password">Password</label>
+                        <input id="login-password" class="form-control" type="password" name="password"
+                               placeholder="Password"/>
+                    </div>
+
+                    <div class="form-group" id="login-password-error-container-2">
+                        <div class="has-error" id="login-password-error-text-2">{{errors.password}}</div>
+                    </div>
+
+                    <div class="form-group hidden" id="login-form-error-container">
+                        <div class="has-error" id="login-form-error-text"></div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <button id="login-button" class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,9 @@
+{
+  "mongoConfig": {
+    "serverUrl": "mongodb://localhost:27017",
+    "database": "thesyndicateherald"
+  },
+  "newsapi": {
+    "key": "c015ee68550d4177878867d0e7f0b392"
+  }
+}
